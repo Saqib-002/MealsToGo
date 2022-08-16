@@ -2,13 +2,12 @@ import { Searchbar } from "react-native-paper";
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
   Platform,
   StatusBar,
 } from "react-native";
 import React from "react";
-import { RestaurantInfo } from "../components/restaurant.info";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const isAndroid = Platform.OS === "android";
 export default function RestaurantScreen() {
@@ -19,7 +18,7 @@ export default function RestaurantScreen() {
           <Searchbar placeholder="Search the restaurant" />
         </View>
         <View style={styles.list}>
-          <RestaurantInfo />
+          <RestaurantInfoCard />
         </View>
       </SafeAreaView>
     </>

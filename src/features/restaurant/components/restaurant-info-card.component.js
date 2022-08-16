@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-native-paper";
 import { StyleSheet, Text } from "react-native";
 
-export const RestaurantInfo = ({
+export const RestaurantInfoCard = ({
   name = "Some Restaurant",
   icon,
   photos = ["https://picsum.photos/700"],
@@ -12,10 +12,14 @@ export const RestaurantInfo = ({
   isClosedTemporarily,
 }) => {
   return (
-    <Card style={styles.card}>
-      <Card.Cover style={styles.cardCover} source={{ uri: `${photos[0]}` }} />
+    <Card elevation={6} style={styles.card}>
+      <Card.Cover
+        key={name}
+        style={styles.cardCover}
+        source={{ uri: `${photos[0]}` }}
+      />
 
-      <Text>{name}</Text>
+      <Text style={styles.title}>{name}</Text>
     </Card>
   );
 };
@@ -23,5 +27,8 @@ export const RestaurantInfo = ({
 const styles = StyleSheet.create({
   cardCover: {
     padding: 15,
+  },
+  title: {
+    padding: 16,
   },
 });
