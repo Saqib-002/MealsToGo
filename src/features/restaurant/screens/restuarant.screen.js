@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
-const isAndroid = Platform.OS === "android";
 export default function RestaurantScreen() {
   return (
     <>
@@ -28,7 +27,7 @@ export default function RestaurantScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: isAndroid ? StatusBar.currentHeight : 0,
+    marginTop: StatusBar.currentHeight && StatusBar.currentHeight,
   },
   search: {
     padding: 16,
